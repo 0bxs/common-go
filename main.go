@@ -1,0 +1,46 @@
+package main
+
+import (
+	_ "common/src/auth_trans"
+	_ "common/src/blacklist"
+	_ "common/src/catch"
+	_ "common/src/collection/bit_map"
+	_ "common/src/collection/deque"
+	_ "common/src/collection/dict"
+	_ "common/src/collection/set"
+	_ "common/src/collection/tuple"
+	_ "common/src/collection/vec"
+	_ "common/src/coroutine"
+	_ "common/src/dto"
+	_ "common/src/function"
+	_ "common/src/i18n"
+	_ "common/src/log"
+	_ "common/src/redis"
+	_ "common/src/res"
+	_ "common/src/result"
+	_ "common/src/status"
+	_ "common/src/types"
+	_ "common/src/utils/cache"
+	_ "common/src/utils/channel"
+	_ "common/src/utils/delay_task"
+	_ "common/src/utils/encipher"
+	_ "common/src/utils/file"
+	_ "common/src/utils/id"
+	_ "common/src/utils/option"
+	_ "common/src/utils/order_rand"
+	_ "common/src/utils/passwd"
+	_ "common/src/utils/pile"
+	_ "common/src/utils/pool"
+	_ "common/src/utils/promise"
+	_ "common/src/utils/random"
+	_ "common/src/utils/rawJson"
+	_ "common/src/utils/request"
+	_ "common/src/utils/strs"
+	_ "common/src/utils/time"
+	_ "common/src/utils/trans"
+	_ "common/src/utils/wallet"
+)
+
+func main() {
+
+}

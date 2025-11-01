@@ -1,0 +1,18 @@
+package trans
+
+import (
+	"common/src/catch"
+
+	"github.com/bytedance/sonic"
+)
+
+func Obj2Json(obj any) string {
+	data := catch.Try1(sonic.Marshal(obj))
+	return string(data)
+}
+
+func Json2Obj[T any](m string) T {
+	t := new(T)
+	catch.Try(sonic.Unmarshal([]byte(m), t))
+	return *t
+}
