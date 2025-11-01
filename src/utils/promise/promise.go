@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"common/src/result"
+	"github.com/0bxs/common-go/src/result"
 )
 
 type Promise[T any] struct {

@@ -3,7 +3,7 @@ package redis
 import (
 	"context"
 
-	"common/src/catch"
+	"github.com/0bxs/common-go/src/catch"
 )
 
 func Exists(key string) bool {

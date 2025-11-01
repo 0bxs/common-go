@@ -3,11 +3,11 @@ package redis
 import (
 	"context"
 
-	"common/src/catch"
-	"common/src/collection/tuple"
-	"common/src/collection/vec"
-	"common/src/utils/option"
-	"common/src/utils/trans"
+	"github.com/0bxs/common-go/src/catch"
+	"github.com/0bxs/common-go/src/collection/tuple"
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/utils/option"
+	"github.com/0bxs/common-go/src/utils/trans"
 
 	"github.com/redis/go-redis/v9"
 )

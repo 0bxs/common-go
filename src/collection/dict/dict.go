@@ -3,9 +3,9 @@ package dict
 import (
 	"sort"
 
-	"common/src/collection/tuple"
-	"common/src/collection/vec"
-	"common/src/utils/option"
+	"github.com/0bxs/common-go/src/collection/tuple"
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 type Dict[K comparable, V any] map[K]V

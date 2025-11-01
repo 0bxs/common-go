@@ -3,8 +3,8 @@ package delay_task
 import (
 	"time"
 
-	"common/src/collection/dict"
-	"common/src/log"
+	"github.com/0bxs/common-go/src/collection/dict"
+	"github.com/0bxs/common-go/src/log"
 )
 
 var (

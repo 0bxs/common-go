@@ -3,7 +3,7 @@ package trans
 import (
 	"time"
 
-	"common/src/catch"
+	"github.com/0bxs/common-go/src/catch"
 )
 
 const (

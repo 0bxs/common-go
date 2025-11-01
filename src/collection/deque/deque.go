@@ -6,8 +6,8 @@ import (
 	"iter"
 	"unsafe"
 
-	"common/src/collection/vec"
-	"common/src/utils/option"
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 // Deque Define a generic ring queue

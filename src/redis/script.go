@@ -3,7 +3,7 @@ package redis
 import (
 	"context"
 
-	"common/src/catch"
+	"github.com/0bxs/common-go/src/catch"
 
 	"github.com/redis/go-redis/v9"
 )

@@ -5,7 +5,7 @@ import (
 	"slices"
 	"strings"
 
-	"common/src/utils/option"
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 type Vec[E any] []E

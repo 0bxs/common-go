@@ -4,7 +4,7 @@ import (
 	"slices"
 	"sync"
 
-	"common/src/utils/option"
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 type SyncVec[E any] struct {
