@@ -1,10 +1,11 @@
 package dict
 
 import (
-	"common-go/src/collection/tuple"
-	"common-go/src/collection/vec"
-	"common-go/src/utils/option"
 	"sort"
+
+	"github.com/0bxs/common-go/src/collection/tuple"
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 type Dict[K comparable, V any] map[K]V

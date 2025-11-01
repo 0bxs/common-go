@@ -1,8 +1,9 @@
 package redis
 
 import (
-	"common-go/src/catch"
 	"context"
+
+	"github.com/0bxs/common-go/src/catch"
 )
 
 func Exists(key string) bool {

@@ -1,9 +1,10 @@
 package delay_task
 
 import (
-	"common-go/src/collection/dict"
-	"common-go/src/log"
 	"time"
+
+	"github.com/0bxs/common-go/src/collection/dict"
+	"github.com/0bxs/common-go/src/log"
 )
 
 var (

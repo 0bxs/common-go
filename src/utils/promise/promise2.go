@@ -1,9 +1,10 @@
 package promise
 
 import (
-	"common-go/src/result"
 	"fmt"
 	"sync"
+
+	"github.com/0bxs/common-go/src/result"
 )
 
 type Promise2[T0, T1 any] struct {

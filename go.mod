@@ -1,4 +1,4 @@
-module common-go
+module github.com/0bxs/common-go
 
 go 1.25
 

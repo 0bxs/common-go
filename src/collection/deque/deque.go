@@ -1,12 +1,13 @@
 package ext
 
 import (
-	"common-go/src/collection/vec"
-	"common-go/src/utils/option"
 	"errors"
 	"fmt"
 	"iter"
 	"unsafe"
+
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 // Deque Define a generic ring queue

@@ -1,15 +1,16 @@
 package auth_trans
 
 import (
-	"common-go/src/collection/bit_map"
-	"common-go/src/collection/dict"
-	"common-go/src/collection/set"
-	"common-go/src/collection/vec"
-	"common-go/src/redis"
-	"common-go/src/utils/cache"
-	"common-go/src/utils/option"
 	"fmt"
 	"time"
+
+	"github.com/0bxs/common-go/src/collection/bit_map"
+	"github.com/0bxs/common-go/src/collection/dict"
+	"github.com/0bxs/common-go/src/collection/set"
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/redis"
+	"github.com/0bxs/common-go/src/utils/cache"
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 var (

@@ -2,13 +2,14 @@ package request
 
 import (
 	"bytes"
-	"common-go/src/log"
 	"fmt"
 	"io"
 	"net/http"
 	"net/url"
 
-	"common-go/src/catch"
+	"github.com/0bxs/common-go/src/log"
+
+	"github.com/0bxs/common-go/src/catch"
 
 	"github.com/bytedance/sonic"
 )

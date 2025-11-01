@@ -1,10 +1,11 @@
 package redis
 
 import (
-	"common-go/src/catch"
-	"common-go/src/collection/vec"
-	"common-go/src/utils/trans"
 	"context"
+
+	"github.com/0bxs/common-go/src/catch"
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/utils/trans"
 )
 
 func GeoAdd(key string, latitude float64, longitude float64, member uint64) {

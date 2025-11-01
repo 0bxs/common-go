@@ -1,7 +1,7 @@
 package trans
 
 import (
-	"common-go/src/catch"
+	"github.com/0bxs/common-go/src/catch"
 
 	"github.com/bytedance/sonic"
 )

@@ -1,8 +1,9 @@
 package trans
 
 import (
-	"common-go/src/catch"
 	"strconv"
+
+	"github.com/0bxs/common-go/src/catch"
 )
 
 func Str2U8(str string) uint8 {

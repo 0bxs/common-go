@@ -1,10 +1,11 @@
 package promise
 
 import (
-	"common-go/src/collection/vec"
-	"common-go/src/result"
 	"fmt"
 	"sync"
+
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/result"
 )
 
 type Promises[T any] struct {

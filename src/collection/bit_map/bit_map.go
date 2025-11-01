@@ -1,10 +1,11 @@
 package bit_map
 
 import (
-	"common-go/src/collection/set"
-	"common-go/src/collection/vec"
-	. "common-go/src/types"
 	"unsafe"
+
+	"github.com/0bxs/common-go/src/collection/set"
+	"github.com/0bxs/common-go/src/collection/vec"
+	. "github.com/0bxs/common-go/src/types"
 )
 
 type BitMap[T Integer] struct {

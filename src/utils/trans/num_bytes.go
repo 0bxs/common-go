@@ -1,11 +1,12 @@
 package trans
 
 import (
-	. "common-go/src/collection/vec"
-	. "common-go/src/types"
 	"fmt"
 	"slices"
 	"unsafe"
+
+	. "github.com/0bxs/common-go/src/collection/vec"
+	. "github.com/0bxs/common-go/src/types"
 )
 
 func Number2Bytes[T Number](t T) []byte {

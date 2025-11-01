@@ -5,11 +5,12 @@
 package dict
 
 import (
-	"common-go/src/types"
-	"common-go/src/utils/option"
 	"sync"
 	"sync/atomic"
 	"unsafe"
+
+	"github.com/0bxs/common-go/src/types"
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 // SyncDict is like a Go map[interface{}]interface{} but is safe for concurrent use

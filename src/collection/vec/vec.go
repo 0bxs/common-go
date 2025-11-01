@@ -1,10 +1,11 @@
 package vec
 
 import (
-	"common-go/src/utils/option"
 	"fmt"
 	"slices"
 	"strings"
+
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 type Vec[E any] []E

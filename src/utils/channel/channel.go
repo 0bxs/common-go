@@ -1,9 +1,10 @@
 package channel
 
 import (
-	"common-go/src/utils/option"
 	"log"
 	"time"
+
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 type Sender[E any] chan<- E

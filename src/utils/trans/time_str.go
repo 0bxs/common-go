@@ -1,8 +1,9 @@
 package trans
 
 import (
-	"common-go/src/catch"
 	"time"
+
+	"github.com/0bxs/common-go/src/catch"
 )
 
 const (

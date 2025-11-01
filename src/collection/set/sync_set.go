@@ -1,10 +1,11 @@
 package set
 
 import (
-	"common-go/src/collection/vec"
-	"common-go/src/types"
 	"fmt"
 	"sync"
+
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/types"
 
 	"github.com/bytedance/sonic"
 )

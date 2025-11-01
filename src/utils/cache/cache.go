@@ -1,16 +1,17 @@
 package cache
 
 import (
-	"common-go/src/collection/dict"
-	"common-go/src/collection/tuple"
-	"common-go/src/collection/vec"
-	"common-go/src/coroutine"
-	"common-go/src/utils/option"
-	"common-go/src/utils/pile"
-	"common-go/src/utils/pool"
 	"fmt"
 	"sync"
 	"time"
+
+	"github.com/0bxs/common-go/src/collection/dict"
+	"github.com/0bxs/common-go/src/collection/tuple"
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/coroutine"
+	"github.com/0bxs/common-go/src/utils/option"
+	"github.com/0bxs/common-go/src/utils/pile"
+	"github.com/0bxs/common-go/src/utils/pool"
 )
 
 type Cache[T comparable, V any] struct {

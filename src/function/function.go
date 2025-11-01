@@ -1,10 +1,10 @@
 package function
 
 import (
-	"common-go/src/collection/dict"
-	"common-go/src/collection/set"
-	"common-go/src/collection/vec"
-	"common-go/src/types"
+	"github.com/0bxs/common-go/src/collection/dict"
+	"github.com/0bxs/common-go/src/collection/set"
+	"github.com/0bxs/common-go/src/collection/vec"
+	"github.com/0bxs/common-go/src/types"
 )
 
 func Map[T, R any, TS ~[]T](ts TS, fn func(T) R) vec.Vec[R] {

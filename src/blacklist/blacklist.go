@@ -1,9 +1,10 @@
 package blacklist
 
 import (
-	"common-go/src/redis"
-	"common-go/src/utils/cache"
 	"fmt"
+
+	"github.com/0bxs/common-go/src/redis"
+	"github.com/0bxs/common-go/src/utils/cache"
 )
 
 var (

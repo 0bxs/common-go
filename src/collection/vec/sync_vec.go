@@ -1,9 +1,10 @@
 package vec
 
 import (
-	"common-go/src/utils/option"
 	"slices"
 	"sync"
+
+	"github.com/0bxs/common-go/src/utils/option"
 )
 
 type SyncVec[E any] struct {
