@@ -1,7 +1,7 @@
 package redis
 
 import (
-	"common/src/log"
+	"common-go/src/log"
 	"context"
 	"errors"
 	"sync"

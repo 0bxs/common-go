@@ -1,7 +1,7 @@
 package vec
 
 import (
-	"common/src/utils/option"
+	"common-go/src/utils/option"
 	"slices"
 	"sync"
 )

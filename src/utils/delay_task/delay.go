@@ -1,8 +1,8 @@
 package delay_task
 
 import (
-	"common/src/collection/dict"
-	"common/src/log"
+	"common-go/src/collection/dict"
+	"common-go/src/log"
 	"time"
 )
 

@@ -1,7 +1,7 @@
 package file
 
 import (
-	"common/src/catch"
+	"common-go/src/catch"
 	"os"
 )
 

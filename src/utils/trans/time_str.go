@@ -1,7 +1,7 @@
 package trans
 
 import (
-	"common/src/catch"
+	"common-go/src/catch"
 	"time"
 )
 

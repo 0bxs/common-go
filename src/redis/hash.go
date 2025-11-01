@@ -1,11 +1,11 @@
 package redis
 
 import (
-	"common/src/catch"
-	"common/src/collection/dict"
-	"common/src/collection/vec"
-	"common/src/types"
-	"common/src/utils/option"
+	"common-go/src/catch"
+	"common-go/src/collection/dict"
+	"common-go/src/collection/vec"
+	"common-go/src/types"
+	"common-go/src/utils/option"
 	"context"
 
 	"github.com/bytedance/sonic"

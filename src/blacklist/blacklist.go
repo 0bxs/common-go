@@ -1,8 +1,8 @@
 package blacklist
 
 import (
-	"common/src/redis"
-	"common/src/utils/cache"
+	"common-go/src/redis"
+	"common-go/src/utils/cache"
 	"fmt"
 )
 

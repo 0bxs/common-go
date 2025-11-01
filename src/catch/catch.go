@@ -1,7 +1,7 @@
 package catch
 
 import (
-	"common/src/log"
+	"common-go/src/log"
 )
 
 func Try(err error) {

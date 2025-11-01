@@ -1,8 +1,8 @@
 package option
 
 import (
-	"common/src/res"
-	"common/src/status"
+	"common-go/src/res"
+	"common-go/src/status"
 	"errors"
 	"fmt"
 )

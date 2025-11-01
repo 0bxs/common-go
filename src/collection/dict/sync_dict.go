@@ -5,8 +5,8 @@
 package dict
 
 import (
-	"common/src/types"
-	"common/src/utils/option"
+	"common-go/src/types"
+	"common-go/src/utils/option"
 	"sync"
 	"sync/atomic"
 	"unsafe"

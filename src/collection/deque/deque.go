@@ -1,8 +1,8 @@
 package ext
 
 import (
-	"common/src/collection/vec"
-	"common/src/utils/option"
+	"common-go/src/collection/vec"
+	"common-go/src/utils/option"
 	"errors"
 	"fmt"
 	"iter"

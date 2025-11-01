@@ -1,7 +1,7 @@
 package redis
 
 import (
-	"common/src/catch"
+	"common-go/src/catch"
 	"context"
 )
 

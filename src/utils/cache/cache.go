@@ -1,13 +1,13 @@
 package cache
 
 import (
-	"common/src/collection/dict"
-	"common/src/collection/tuple"
-	"common/src/collection/vec"
-	"common/src/coroutine"
-	"common/src/utils/option"
-	"common/src/utils/pile"
-	"common/src/utils/pool"
+	"common-go/src/collection/dict"
+	"common-go/src/collection/tuple"
+	"common-go/src/collection/vec"
+	"common-go/src/coroutine"
+	"common-go/src/utils/option"
+	"common-go/src/utils/pile"
+	"common-go/src/utils/pool"
 	"fmt"
 	"sync"
 	"time"

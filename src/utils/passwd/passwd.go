@@ -1,7 +1,7 @@
 package passwd
 
 import (
-	"common/src/catch"
+	"common-go/src/catch"
 
 	"golang.org/x/crypto/bcrypt"
 )

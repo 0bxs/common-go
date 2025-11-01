@@ -1,9 +1,9 @@
 package dict
 
 import (
-	"common/src/collection/tuple"
-	"common/src/collection/vec"
-	"common/src/utils/option"
+	"common-go/src/collection/tuple"
+	"common-go/src/collection/vec"
+	"common-go/src/utils/option"
 	"sort"
 )
 

@@ -1,8 +1,8 @@
 package promise
 
 import (
-	"common/src/collection/vec"
-	"common/src/result"
+	"common-go/src/collection/vec"
+	"common-go/src/result"
 	"fmt"
 	"sync"
 )

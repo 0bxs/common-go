@@ -1,9 +1,9 @@
 package bit_map
 
 import (
-	"common/src/collection/set"
-	"common/src/collection/vec"
-	. "common/src/types"
+	"common-go/src/collection/set"
+	"common-go/src/collection/vec"
+	. "common-go/src/types"
 	"unsafe"
 )
 

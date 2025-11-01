@@ -1,9 +1,9 @@
 package redis
 
 import (
-	"common/src/catch"
-	"common/src/collection/vec"
-	"common/src/utils/trans"
+	"common-go/src/catch"
+	"common-go/src/collection/vec"
+	"common-go/src/utils/trans"
 	"context"
 )
 

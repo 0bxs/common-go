@@ -1,7 +1,7 @@
 package promise
 
 import (
-	"common/src/result"
+	"common-go/src/result"
 	"fmt"
 	"sync"
 )

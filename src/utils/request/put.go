@@ -4,7 +4,7 @@ import (
 	"io"
 	"net/http"
 
-	"common/src/catch"
+	"common-go/src/catch"
 
 	"github.com/bytedance/sonic"
 )

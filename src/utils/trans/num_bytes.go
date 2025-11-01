@@ -1,8 +1,8 @@
 package trans
 
 import (
-	. "common/src/collection/vec"
-	. "common/src/types"
+	. "common-go/src/collection/vec"
+	. "common-go/src/types"
 	"fmt"
 	"slices"
 	"unsafe"

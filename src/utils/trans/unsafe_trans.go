@@ -1,7 +1,7 @@
 package trans
 
 import (
-	. "common/src/types"
+	. "common-go/src/types"
 	"encoding/binary"
 	"unsafe"
 )

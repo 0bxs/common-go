@@ -1,7 +1,7 @@
 package channel
 
 import (
-	"common/src/utils/option"
+	"common-go/src/utils/option"
 	"log"
 	"time"
 )
