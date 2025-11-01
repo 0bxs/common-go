@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"unsafe"
 
-	. "github.com/0bxs/common-go/src/types"
+	. "common/src/types"
 )
 
 // UnsafeTrans 对值类型做二进制重新解释 谨慎使用

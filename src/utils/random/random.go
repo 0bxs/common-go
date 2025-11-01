@@ -5,8 +5,8 @@ import (
 	"math/rand/v2"
 	"time"
 
-	"github.com/0bxs/common-go/src/catch"
-	"github.com/0bxs/common-go/src/utils/trans"
+	"common/src/catch"
+	"common/src/utils/trans"
 
 	"github.com/google/uuid"
 )

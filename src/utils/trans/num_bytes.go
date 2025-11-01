@@ -5,8 +5,8 @@ import (
 	"slices"
 	"unsafe"
 
-	. "github.com/0bxs/common-go/src/collection/vec"
-	. "github.com/0bxs/common-go/src/types"
+	. "common/src/collection/vec"
+	. "common/src/types"
 )
 
 func Number2Bytes[T Number](t T) []byte {

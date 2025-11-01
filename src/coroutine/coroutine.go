@@ -1,6 +1,6 @@
 package coroutine
 
-import "github.com/0bxs/common-go/src/log"
+import "common/src/log"
 
 // Launch 禁止在程序中直接使用go关键字，若需要用这个代替
 func Launch(fn func()) {

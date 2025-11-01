@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"maps"
 
-	"github.com/0bxs/common-go/src/collection/vec"
-	"github.com/0bxs/common-go/src/types"
+	"common/src/collection/vec"
+	"common/src/types"
 
 	"github.com/bytedance/sonic"
 )

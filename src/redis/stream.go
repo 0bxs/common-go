@@ -5,11 +5,11 @@ import (
 	"errors"
 	"time"
 
-	"github.com/0bxs/common-go/src/catch"
-	"github.com/0bxs/common-go/src/collection/vec"
-	"github.com/0bxs/common-go/src/log"
-	"github.com/0bxs/common-go/src/utils/option"
-	"github.com/0bxs/common-go/src/utils/trans"
+	"common/src/catch"
+	"common/src/collection/vec"
+	"common/src/log"
+	"common/src/utils/option"
+	"common/src/utils/trans"
 
 	"github.com/redis/go-redis/v9"
 )

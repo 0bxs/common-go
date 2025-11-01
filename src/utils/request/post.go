@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/0bxs/common-go/src/log"
+	"common/src/log"
 
-	"github.com/0bxs/common-go/src/catch"
+	"common/src/catch"
 
 	"github.com/bytedance/sonic"
 )

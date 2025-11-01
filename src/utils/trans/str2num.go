@@ -3,7 +3,7 @@ package trans
 import (
 	"strconv"
 
-	"github.com/0bxs/common-go/src/catch"
+	"common/src/catch"
 )
 
 func Str2U8(str string) uint8 {

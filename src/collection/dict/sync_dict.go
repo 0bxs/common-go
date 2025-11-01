@@ -9,8 +9,8 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	"github.com/0bxs/common-go/src/types"
-	"github.com/0bxs/common-go/src/utils/option"
+	"common/src/types"
+	"common/src/utils/option"
 )
 
 // SyncDict is like a Go map[interface{}]interface{} but is safe for concurrent use

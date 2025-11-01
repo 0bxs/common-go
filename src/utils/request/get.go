@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/0bxs/common-go/src/catch"
-	"github.com/0bxs/common-go/src/collection/dict"
+	"common/src/catch"
+	"common/src/collection/dict"
 
 	"github.com/bytedance/sonic"
 )

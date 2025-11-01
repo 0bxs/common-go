@@ -3,9 +3,9 @@ package redis
 import (
 	"context"
 
-	"github.com/0bxs/common-go/src/catch"
-	"github.com/0bxs/common-go/src/collection/vec"
-	"github.com/0bxs/common-go/src/types"
+	"common/src/catch"
+	"common/src/collection/vec"
+	"common/src/types"
 
 	"github.com/bytedance/sonic"
 )

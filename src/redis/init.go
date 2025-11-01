@@ -5,7 +5,7 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/0bxs/common-go/src/log"
+	"common/src/log"
 
 	"github.com/redis/go-redis/v9"
 )

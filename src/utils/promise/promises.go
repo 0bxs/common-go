@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/0bxs/common-go/src/collection/vec"
-	"github.com/0bxs/common-go/src/result"
+	"common/src/collection/vec"
+	"common/src/result"
 )
 
 type Promises[T any] struct {

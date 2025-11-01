@@ -1,7 +1,7 @@
 package dto
 
 import (
-	"github.com/0bxs/common-go/src/utils/strs"
+	"common/src/utils/strs"
 )
 
 type PageDto struct {

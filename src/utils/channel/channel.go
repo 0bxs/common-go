@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/0bxs/common-go/src/utils/option"
+	"common/src/utils/option"
 )
 
 type Sender[E any] chan<- E

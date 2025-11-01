@@ -3,7 +3,7 @@ package redis
 import (
 	"context"
 
-	"github.com/0bxs/common-go/src/catch"
+	"common/src/catch"
 )
 
 func SetBit(key string, offset int64, value int) int64 {

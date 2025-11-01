@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/0bxs/common-go/src/collection/bit_map"
-	"github.com/0bxs/common-go/src/collection/dict"
-	"github.com/0bxs/common-go/src/collection/set"
-	"github.com/0bxs/common-go/src/collection/vec"
-	"github.com/0bxs/common-go/src/redis"
-	"github.com/0bxs/common-go/src/utils/cache"
-	"github.com/0bxs/common-go/src/utils/option"
+	"common/src/collection/bit_map"
+	"common/src/collection/dict"
+	"common/src/collection/set"
+	"common/src/collection/vec"
+	"common/src/redis"
+	"common/src/utils/cache"
+	"common/src/utils/option"
 )
 
 var (

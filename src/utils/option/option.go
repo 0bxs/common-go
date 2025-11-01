@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/0bxs/common-go/src/res"
-	"github.com/0bxs/common-go/src/status"
+	"common/src/res"
+	"common/src/status"
 )
 
 type Opt[T any] struct {
