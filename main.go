@@ -15,7 +15,6 @@ import (
 	_ "github.com/0bxs/common-go/src/function"
 	_ "github.com/0bxs/common-go/src/log"
 	_ "github.com/0bxs/common-go/src/redis"
-	_ "github.com/0bxs/common-go/src/res"
 	_ "github.com/0bxs/common-go/src/result"
 	_ "github.com/0bxs/common-go/src/status"
 	_ "github.com/0bxs/common-go/src/types"
