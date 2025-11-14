@@ -10,6 +10,7 @@ const (
 	YyyyMmDdHhMmSs  = "2006-01-02 15:04:05"
 	YyyyMmDdHhMmSsT = "2006-01-02T15:04:05+08:00"
 	YyyyMmDd        = "2006-01-02"
+	YyyyMmDdSlash   = "2006/01/02"
 )
 
 func Str2Milli(format string, value string) int64 {
