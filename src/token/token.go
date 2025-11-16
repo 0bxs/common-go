@@ -1,4 +1,4 @@
-package white_list
+package token
 
 import (
 	"fmt"
@@ -24,6 +24,11 @@ func Get(id int64) option.Opt[int64] {
 func Set(id, expireTime int64) {
 	redis.SetPx(key(id), expireTime, expire)
 	userCache.Set(id, expireTime, expire)
+}
+
+func Del(id int64) {
+	redis.Del(key(id))
+	userCache.Del(id)
 }
 
 func key(id int64) string {
