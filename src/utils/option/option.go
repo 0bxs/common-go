@@ -48,7 +48,7 @@ func (o Opt[T]) Expect(msg string) T {
 	panic(res.Err{Code: status.CustomCode, Msg: msg})
 }
 
-func (o Opt[T]) ExpectCode(code uint8) T {
+func (o Opt[T]) ExpectCode(code int8) T {
 	if o.IsSome() {
 		return o.V
 	}
