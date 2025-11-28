@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/0bxs/common-go/src/function"
 	"github.com/0bxs/common-go/src/redis"
 	"github.com/0bxs/common-go/src/utils/cache"
 	"github.com/0bxs/common-go/src/utils/option"
@@ -29,6 +30,14 @@ func Set(id, expireTime int64) {
 func Del(id int64) {
 	redis.Del(key(id))
 	userCache.Del(id)
+}
+
+func KickOut(ids []int64) {
+	redis.Del(function.Map(ids, func(t int64) string {
+		userCache.Del(t)
+		return key(t)
+	})...)
+
 }
 
 func key(id int64) string {
