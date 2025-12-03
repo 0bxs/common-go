@@ -1,7 +1,6 @@
 package cache
 
 import (
-	"fmt"
 	"sync"
 	"time"
 
@@ -281,10 +280,10 @@ func (c *Cache[T, V]) Del(key T) {
 	}
 }
 
-func (c *Cache[T, V]) ForEach() {
-	fmt.Println(len(c.data))
-	for _, i := range *c.heap {
-		fmt.Println(i.count, i.key, i.expire, i.value, i.index)
+func (c *Cache[T, V]) ForEach(fn func(k T, v V)) {
+	c.rw.RLock()
+	defer c.rw.RUnlock()
+	for _, d := range c.data {
+		fn(d.key, d.value)
 	}
-	fmt.Println()
 }
