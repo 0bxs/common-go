@@ -283,7 +283,18 @@ func (c *Cache[T, V]) Del(key T) {
 func (c *Cache[T, V]) ForEach(fn func(k T, v V)) {
 	c.rw.RLock()
 	defer c.rw.RUnlock()
+	len0 := len(c.data)
+	deletes0 := vec.New[tuple.T2[T, *Item[T, V]]](len0)
+	nowMillis := time.Now().UnixMilli()
 	for _, d := range c.data {
-		fn(d.key, d.value)
+		expire := d.expire
+		if expire >= 0 && expire < nowMillis {
+			deletes0.Append(tuple.T2Of[T, *Item[T, V]](d.key, d))
+		} else {
+			d.count++
+			pile.Fix(c.heap, d.index)
+			fn(d.key, d.value)
+		}
 	}
+	c.deletes(deletes0)
 }
