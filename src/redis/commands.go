@@ -2,6 +2,7 @@ package redis
 
 import (
 	"context"
+	"time"
 
 	"github.com/0bxs/common-go/src/catch"
 )
@@ -26,4 +27,8 @@ func TTL(key string) int64 {
 func PTtl(key string) int64 {
 	result := catch.Try1(client.PTTL(context.Background(), key).Result())
 	return result.Milliseconds()
+}
+
+func PExpire(key string, duration time.Duration) bool {
+	return catch.Try1(client.PExpire(context.Background(), key, duration).Result())
 }
