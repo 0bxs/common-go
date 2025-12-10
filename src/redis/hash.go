@@ -74,7 +74,11 @@ func HMGetDict[T types.Number | string](key string, fields vec.Vec[string]) dict
 	result := catch.Try1(client.HMGet(context.Background(), key, fields...).Result())
 	dictResult := dict.New[string, T](len(result))
 	for i := range fields {
-		dictResult.Store(fields[i], result[i].(T))
+		if result[i] == nil {
+			dictResult.Store(fields[i], *new(T))
+		} else {
+			dictResult.Store(fields[i], result[i].(T))
+		}
 	}
 	return dictResult
 }
