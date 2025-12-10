@@ -40,5 +40,4 @@ import (
 )
 
 func main() {
-
 }
