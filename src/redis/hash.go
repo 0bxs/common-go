@@ -8,6 +8,7 @@ import (
 	"github.com/0bxs/common-go/src/collection/vec"
 	"github.com/0bxs/common-go/src/types"
 	"github.com/0bxs/common-go/src/utils/option"
+	"github.com/0bxs/common-go/src/utils/trans"
 
 	"github.com/bytedance/sonic"
 )
@@ -77,7 +78,7 @@ func HMGetDict[T types.Number | string](key string, fields vec.Vec[string]) dict
 		if result[i] == nil {
 			dictResult.Store(fields[i], *new(T))
 		} else {
-			dictResult.Store(fields[i], result[i].(T))
+			dictResult.Store(fields[i], trans.UnsafeTrans[T, any](result[i]))
 		}
 	}
 	return dictResult
