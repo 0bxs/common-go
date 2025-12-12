@@ -24,7 +24,7 @@ func (r Err) Error() string {
 	return fmt.Sprintf(`{"code":%d,"msg":"%s"}`, r.Code, r.Msg)
 }
 
-func ErrorHandler(ctx *fiber.Ctx) error {
+func ErrorHandler0(ctx *fiber.Ctx) error {
 	defer func() {
 		switch e := recover().(type) {
 		case nil:
