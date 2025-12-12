@@ -4,6 +4,7 @@ import (
 	"strconv"
 
 	"github.com/0bxs/common-go/src/catch"
+	"github.com/0bxs/common-go/src/types"
 )
 
 func Str2U8(str string) uint8 {
@@ -34,6 +35,10 @@ func Str2Int(str string) int {
 	return int(catch.Try1(strconv.ParseInt(str, 10, 32)))
 }
 
+func Str2UInt(str string) int {
+	return int(catch.Try1(strconv.ParseUint(str, 10, 32)))
+}
+
 func Str2U64(str string) uint64 {
 	return catch.Try1(strconv.ParseUint(str, 10, 64))
 }
@@ -48,4 +53,75 @@ func Str2F32(str string) float32 {
 
 func Str2F64(str string) float64 {
 	return catch.Try1(strconv.ParseFloat(str, 64))
+}
+
+func Str2Num[T types.Number](str string) T {
+	var zero T
+	switch any(zero).(type) {
+	case int:
+		return any(Str2Int(str)).(T)
+	case int8:
+		return any(Str2I8(str)).(T)
+	case int16:
+		return any(Str2I16(str)).(T)
+	case int32:
+		return any(Str2I32(str)).(T)
+	case int64:
+		return any(Str2I64(str)).(T)
+	case uint:
+		return any(Str2UInt(str)).(T)
+	case uint8:
+		return any(Str2U8(str)).(T)
+	case uint16:
+		return any(Str2U16(str)).(T)
+	case uint32:
+		return any(Str2U32(str)).(T)
+	case uint64:
+		return any(Str2U16(str)).(T)
+	case float32:
+		return any(Str2F32(str)).(T)
+	case float64:
+		return any(Str2F64(str)).(T)
+	default:
+		panic("unsupported numeric type")
+	}
+}
+
+func RedisAny2NumStr[T types.Number | string](str any) T {
+	switch str.(type) {
+	case string:
+		var zero T
+		switch any(zero).(type) {
+		case int:
+			return any(Str2Int(str.(string))).(T)
+		case int8:
+			return any(Str2I8(str.(string))).(T)
+		case int16:
+			return any(Str2I16(str.(string))).(T)
+		case int32:
+			return any(Str2I32(str.(string))).(T)
+		case int64:
+			return any(Str2I64(str.(string))).(T)
+		case uint:
+			return any(Str2UInt(str.(string))).(T)
+		case uint8:
+			return any(Str2U8(str.(string))).(T)
+		case uint16:
+			return any(Str2U16(str.(string))).(T)
+		case uint32:
+			return any(Str2U32(str.(string))).(T)
+		case uint64:
+			return any(Str2U16(str.(string))).(T)
+		case float32:
+			return any(Str2F32(str.(string))).(T)
+		case float64:
+			return any(Str2F64(str.(string))).(T)
+		case string:
+			return str.(T)
+		default:
+			panic("unsupported numeric type")
+		}
+	default:
+		panic("unsupported numeric type")
+	}
 }

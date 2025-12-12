@@ -9,7 +9,6 @@ import (
 	"github.com/0bxs/common-go/src/types"
 	"github.com/0bxs/common-go/src/utils/option"
 	"github.com/0bxs/common-go/src/utils/trans"
-
 	"github.com/bytedance/sonic"
 )
 
@@ -23,7 +22,10 @@ func HExists(key string, field string) bool {
 
 func HGet[F types.Number | string, T types.Number | string](key string, field F) option.Opt[T] {
 	result, err := client.Do(context.Background(), "hget", key, field).Result()
-	return option.OptOf[T](result.(T), try(err))
+	if !try(err) {
+		return option.OptOfEmpty[T]()
+	}
+	return option.OptOf[T](trans.RedisAny2NumStr[T](result), try(err))
 }
 
 func HGetObj[T any](key string, field string) option.Opt[T] {
@@ -78,7 +80,7 @@ func HMGetDict[T types.Number | string](key string, fields vec.Vec[string]) dict
 		if result[i] == nil {
 			dictResult.Store(fields[i], *new(T))
 		} else {
-			dictResult.Store(fields[i], trans.UnsafeTrans[T, any](result[i]))
+			dictResult.Store(fields[i], trans.RedisAny2NumStr[T](result[i]))
 		}
 	}
 	return dictResult
