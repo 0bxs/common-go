@@ -28,7 +28,7 @@ func TodayStart1(now time.Time) int64 {
 	return time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location()).UnixMilli() - 1
 }
 
-func WeekStart() time.Time {
+func WeekStart() int64 {
 	now := time.Now()
 	loc := now.Location()
 	weekday := int(now.Weekday())
@@ -36,20 +36,20 @@ func WeekStart() time.Time {
 		weekday = 7
 	}
 	start := now.AddDate(0, 0, -(weekday - 1))
-	return time.Date(start.Year(), start.Month(), start.Day(), 0, 0, 0, 0, loc)
+	return time.Date(start.Year(), start.Month(), start.Day(), 0, 0, 0, 0, loc).UnixMilli()
 }
 
-func WeekStart1(now time.Time) time.Time {
+func WeekStart1(now time.Time) int64 {
 	loc := now.Location()
 	weekday := int(now.Weekday())
 	if weekday == 0 {
 		weekday = 7
 	}
 	start := now.AddDate(0, 0, -(weekday - 1))
-	return time.Date(start.Year(), start.Month(), start.Day(), 0, 0, 0, 0, loc)
+	return time.Date(start.Year(), start.Month(), start.Day(), 0, 0, 0, 0, loc).UnixMilli()
 }
 
-func WeekEnd() time.Time {
+func WeekEnd() int64 {
 	now := time.Now()
 	loc := now.Location()
 	weekday := int(now.Weekday())
@@ -58,10 +58,10 @@ func WeekEnd() time.Time {
 	}
 	offset := 7 - weekday
 	end := now.AddDate(0, 0, offset)
-	return time.Date(end.Year(), end.Month(), end.Day(), 23, 59, 59, int(time.Second-time.Nanosecond), loc)
+	return time.Date(end.Year(), end.Month(), end.Day(), 23, 59, 59, int(time.Second-time.Nanosecond), loc).UnixMilli()
 }
 
-func WeekEnd1(now time.Time) time.Time {
+func WeekEnd1(now time.Time) int64 {
 	loc := now.Location()
 	weekday := int(now.Weekday())
 	if weekday == 0 {
@@ -69,25 +69,25 @@ func WeekEnd1(now time.Time) time.Time {
 	}
 	offset := 7 - weekday
 	end := now.AddDate(0, 0, offset)
-	return time.Date(end.Year(), end.Month(), end.Day(), 23, 59, 59, int(time.Second-time.Nanosecond), loc)
+	return time.Date(end.Year(), end.Month(), end.Day(), 23, 59, 59, int(time.Second-time.Nanosecond), loc).UnixMilli()
 }
 
-func MontyStart() time.Time {
+func MontyStart() int64 {
 	now := time.Now()
-	return time.Date(now.Year(), now.Month(), 1, 0, 0, 0, 0, now.Location())
+	return time.Date(now.Year(), now.Month(), 1, 0, 0, 0, 0, now.Location()).UnixMilli()
 }
 
-func MontyStart1(now time.Time) time.Time {
-	return time.Date(now.Year(), now.Month(), 1, 0, 0, 0, 0, now.Location())
+func MontyStart1(now time.Time) int64 {
+	return time.Date(now.Year(), now.Month(), 1, 0, 0, 0, 0, now.Location()).UnixMilli()
 }
 
-func MonthEnd() time.Time {
+func MonthEnd() int64 {
 	now := time.Now()
 	nextMonth := time.Date(now.Year(), now.Month()+1, 1, 0, 0, 0, 0, now.Location())
-	return nextMonth.Add(-time.Nanosecond)
+	return nextMonth.Add(-time.Nanosecond).UnixMilli()
 }
 
-func MonthEnd1(now time.Time) time.Time {
+func MonthEnd1(now time.Time) int64 {
 	nextMonth := time.Date(now.Year(), now.Month()+1, 1, 0, 0, 0, 0, now.Location())
-	return nextMonth.Add(-time.Nanosecond)
+	return nextMonth.Add(-time.Nanosecond).UnixMilli()
 }
