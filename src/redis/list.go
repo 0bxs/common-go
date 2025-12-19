@@ -85,11 +85,11 @@ func LRangeObj1[T any](key string, start, stop int64) (vec.Vec[T], vec.Vec[strin
 }
 
 func LRem[T string | types.Number](key string, value T) {
-	catch.Try(client.Do(context.Background(), "LREM", key, 0, value).Err())
+	catch.Try(client.Do(context.Background(), "LREM", key, 1, value).Err())
 }
 
 func LRemObj[T any](key string, value T) {
-	catch.Try(client.Do(context.Background(), "LREM", key, 0, catch.Try1(sonic.Marshal(value))).Err())
+	catch.Try(client.Do(context.Background(), "LREM", key, 1, string(catch.Try1(sonic.Marshal(value)))).Err())
 }
 
 func LLen(key string) int {
