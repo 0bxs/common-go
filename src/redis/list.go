@@ -70,6 +70,20 @@ func LRangeObj[T any](key string, start, stop int64) vec.Vec[T] {
 	return temp
 }
 
+func LRangeObj1[T any](key string, start, stop int64) (vec.Vec[T], vec.Vec[string]) {
+	result := catch.Try1(client.Do(context.Background(), "LRANGE", key, start, stop).Slice())
+	temp := vec.New[T](len(result))
+	temp1 := vec.New[string](len(result))
+	for _, v := range result {
+		t := new(T)
+		tempStr := v.(string)
+		temp1.Append(tempStr)
+		catch.Try(sonic.Unmarshal([]byte(tempStr), t))
+		temp.Append(*t)
+	}
+	return temp, temp1
+}
+
 func LRem[T string | types.Number](key string, value T) {
 	catch.Try(client.Do(context.Background(), "LREM", key, 0, value).Err())
 }
