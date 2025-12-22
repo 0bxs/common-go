@@ -12,7 +12,7 @@ func Now2TodayEnd() int64 {
 
 func TodayEnd() int64 {
 	now := time.Now()
-	return time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, 0, now.Location()).UnixMilli() - 1
+	return time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, 0, now.Location()).UnixMilli()
 }
 
 func TodayEnd1(now time.Time) int64 {
@@ -26,16 +26,16 @@ func TodayEnd2(ms int64) int64 {
 
 func TodayStart() int64 {
 	now := time.Now()
-	return time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location()).UnixMilli() - 1
+	return time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location()).UnixMilli()
 }
 
 func TodayStart1(now time.Time) int64 {
-	return time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location()).UnixMilli() - 1
+	return time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location()).UnixMilli()
 }
 
 func TodayStart2(ms int64) int64 {
 	now := time.UnixMilli(ms)
-	return time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location()).UnixMilli() - 1
+	return time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location()).UnixMilli()
 }
 
 func WeekStart() int64 {
