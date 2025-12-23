@@ -18,7 +18,11 @@ var (
 
 func Get(id int64) option.Opt[int64] {
 	return userCache.Get(id).Else(func() option.Opt[int64] {
-		return redis.GetI64(key(id))
+		opt := redis.GetI64(key(id))
+		opt.Map(func(t int64) {
+			userCache.Set(id, t, expire)
+		})
+		return opt
 	})
 }
 
