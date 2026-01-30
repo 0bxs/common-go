@@ -15,7 +15,7 @@ var (
 	redisKey  = ""
 	userCache = new(cache.Cache[int64, int64])
 	expireI64 = int64(time.Second * 60 * 60 * 24 * 7)
-	expire    = cache.WithExpiration(time.Second * 60 * 60 * 24 * 7)
+	expire    = cache.WithExpiration(time.Duration(expireI64))
 )
 
 func Get(id int64) option.Opt[int64] {
@@ -54,7 +54,7 @@ func Init(key0 string, expire0 int64, cap int) {
 	redisKey = key0
 	if expire0 > 0 {
 		expireI64 = expire0
-		expire = cache.WithExpiration(time.Duration(expire0))
+		expire = cache.WithExpiration(time.Duration(expireI64))
 	}
 	userCache = cache.New(cache.AsLRU[int64, int64](lru.WithCapacity(cap)))
 }

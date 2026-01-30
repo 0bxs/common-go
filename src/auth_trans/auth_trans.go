@@ -9,18 +9,20 @@ import (
 	"github.com/0bxs/common-go/src/collection/set"
 	"github.com/0bxs/common-go/src/collection/vec"
 	"github.com/0bxs/common-go/src/redis"
-	"github.com/0bxs/common-go/src/utils/cache"
 	"github.com/0bxs/common-go/src/utils/option"
+	cache "github.com/Code-Hex/go-generics-cache"
+	"github.com/Code-Hex/go-generics-cache/policy/lru"
 )
 
 var (
 	redisKey  = ""
-	userCache = cache.New[int64, set.Set[int16]](1000)
-	expire    = int64(time.Second * 60 * 60 * 24 * 7)
+	userCache = new(cache.Cache[int64, set.Set[int16]])
+	expireI64 = int64(time.Second * 60 * 60 * 24 * 7)
+	expire    = cache.WithExpiration(time.Duration(expireI64))
 )
 
 func Get(id int64) option.Opt[set.Set[int16]] {
-	return userCache.Get(id).Else(func() option.Opt[set.Set[int16]] {
+	return option.OptOf(userCache.Get(id)).Else(func() option.Opt[set.Set[int16]] {
 		opt := redis.GetString(key(id))
 		if opt.IsSome() {
 			bitMap := bit_map.BytesBitMapNew([]byte(opt.V))
@@ -36,7 +38,7 @@ func Gets(ids vec.Vec[int64]) (dict.Dict[int64, set.Set[int16]], vec.Vec[int64])
 	missIds := vec.New[int64](ids.Len())
 	d := dict.New[int64, set.Set[int16]](ids.Len())
 	ids.ForEach(func(userId int64) {
-		userCache.Get(userId).MapOrElse(func() {
+		option.OptOf(userCache.Get(userId)).MapOrElse(func() {
 			missIds.Append(userId)
 		}, func(s set.Set[int16]) {
 			d.Store(userId, s)
@@ -63,7 +65,7 @@ func Set(id int64, auth bit_map.BytesBitMap) {
 func GetDel(id int64) option.Opt[set.Set[int16]] {
 	opt := redis.GetBytesDel(key(id))
 	if opt.IsSome() {
-		userCache.Del(id)
+		userCache.Delete(id)
 		bitMap := bit_map.BytesBitMapNew(opt.V)
 		return option.Some(bitMap.ToSet())
 	}
@@ -72,16 +74,18 @@ func GetDel(id int64) option.Opt[set.Set[int16]] {
 
 func Del(id int64) {
 	redis.Del(key(id))
-	userCache.Del(id)
+	userCache.Delete(id)
 }
 
 func key(id int64) string {
 	return fmt.Sprintf(redisKey, id)
 }
 
-func Init(key0 string, expire0 int64) {
+func Init(key0 string, expire0 int64, cap int) {
 	redisKey = key0
 	if expire0 > 0 {
-		expire = expire0
+		expireI64 = expire0
+		expire = cache.WithExpiration(time.Duration(expireI64))
 	}
+	userCache = cache.New(cache.AsLRU[int64, set.Set[int16]](lru.WithCapacity(cap)))
 }
