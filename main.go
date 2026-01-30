@@ -2,7 +2,6 @@ package main
 
 import (
 	_ "github.com/0bxs/common-go/src/auth_trans"
-	_ "github.com/0bxs/common-go/src/blacklist"
 	_ "github.com/0bxs/common-go/src/catch"
 	_ "github.com/0bxs/common-go/src/collection/bit_map"
 	_ "github.com/0bxs/common-go/src/collection/deque"
