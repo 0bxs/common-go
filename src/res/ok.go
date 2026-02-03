@@ -30,3 +30,6 @@ func Ok0(ctx *fiber.Ctx) error {
 func Ok1[T any](ctx *fiber.Ctx, data T) error {
 	return ctx.JSON(Ok[T]{Code: status.OK, Data: data})
 }
+func Ok2[T any](ctx *fiber.Ctx, code int8, data T) error {
+	return ctx.JSON(Ok[T]{Code: code, Data: data})
+}
