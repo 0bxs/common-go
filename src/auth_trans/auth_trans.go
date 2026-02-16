@@ -58,7 +58,7 @@ func Set(id int64, auth bit_map.BytesBitMap) {
 		})
 		authStr = string(v)
 	})
-	redis.Set(key(id), authStr)
+	redis.SetPx(key(id), authStr, expireI64)
 	userCache.Set(id, authSet, expire)
 }
 
