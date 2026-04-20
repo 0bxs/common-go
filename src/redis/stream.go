@@ -41,10 +41,32 @@ func XAutoClaim(key, group, consumer string, minIdleTime int64) {
 func XAdd[T any](key string, t T, maxLen int64) string {
 	m := trans.Obj2Json(t)
 	args := make([]any, 0, 7)
-	args = append(args, "xadd", key, "maxlen", maxLen, "*")
+	args = append(args, "xadd", key, "maxlen", "~", maxLen, "*")
 	args = append(args, "data", m)
 	result := catch.Try1(client.Do(context.Background(), args...).Result())
 	return result.(string)
+}
+
+var xAddMulScript = redis.NewScript(`
+local results = {}
+local maxlen = tonumber(ARGV[1])
+
+for i = 1, #KEYS do
+    local stream = KEYS[i]
+    local dataValue = ARGV[i+1]
+    local res = redis.call("XADD", stream, "MAXLEN", "~", maxlen, "*", "data", dataValue)
+    table.insert(results, res)
+end
+
+return results
+`)
+
+func XAddMul[T any](key string, ts []T, maxLen int64) {
+	vs := []any{maxLen}
+	for _, t := range ts {
+		vs = append(vs, trans.Obj2Json(t))
+	}
+	catch.Try(xAddMulScript.Run(context.Background(), client, []string{key}, vs).Err())
 }
 
 func XDel(key string, ids vec.Vec[string]) {
