@@ -15,7 +15,12 @@ import (
 )
 
 // XAck 确认消息
-func XAck(key, group string, ids vec.Vec[string]) {
+
+func XAck(key, group string, id string) {
+	catch.Try(client.Do(context.Background(), "xack", key, group, id).Err())
+}
+
+func XAckMul(key, group string, ids vec.Vec[string]) {
 	args := make([]any, 0, 3+len(ids))
 	args = append(args, "xack", key, group)
 	for _, id := range ids {
