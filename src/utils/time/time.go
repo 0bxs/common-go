@@ -6,22 +6,22 @@ import (
 
 func Now2TodayEnd() int64 {
 	now := time.Now()
-	today := time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, 0, now.Location())
+	today := time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, int(time.Second-time.Nanosecond), now.Location())
 	return today.Sub(now).Milliseconds()
 }
 
 func TodayEnd() int64 {
 	now := time.Now()
-	return time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, 0, now.Location()).UnixMilli()
+	return time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, int(time.Second-time.Nanosecond), now.Location()).UnixMilli()
 }
 
 func TodayEnd1(now time.Time) int64 {
-	return time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, 0, now.Location()).UnixMilli() - 1
+	return time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, int(time.Second-time.Nanosecond), now.Location()).UnixMilli()
 }
 
 func TodayEnd2(ms int64) int64 {
 	now := time.UnixMilli(ms)
-	return time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, 0, now.Location()).UnixMilli() - 1
+	return time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, int(time.Second-time.Nanosecond), now.Location()).UnixMilli()
 }
 
 func TodayStart() int64 {
