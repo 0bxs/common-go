@@ -51,7 +51,7 @@ var xAddMulScript = redis.NewScript(`
 local results = {}
 local maxlen = tonumber(ARGV[1])
 
-for i = 1, #KEYS do
+for i = 1, (#ARGV - 1) do
     local stream = KEYS[i]
     local dataValue = ARGV[i+1]
     local res = redis.call("XADD", stream, "MAXLEN", "=", maxlen, "*", "data", dataValue)
