@@ -49,11 +49,11 @@ func XAdd[T any](key string, t T, maxLen int64) string {
 
 var xAddMulScript = redis.NewScript(`
 local results = {}
+local stream = KEYS[1]
 local maxlen = tonumber(ARGV[1])
 
-for i = 1, (#ARGV - 1) do
-    local stream = KEYS[i]
-    local dataValue = ARGV[i+1]
+for i = 2, #ARGV do
+    local dataValue = ARGV[i]
     local res = redis.call("XADD", stream, "MAXLEN", "=", maxlen, "*", "data", dataValue)
     table.insert(results, res)
 end
