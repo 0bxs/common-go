@@ -1,11 +1,16 @@
 package rawJson
 
-import "errors"
+import (
+	"errors"
+)
 
 type RawJson []byte
 
 // MarshalJSON returns m as the JSON encoding of m.
 func (r RawJson) MarshalJSON() ([]byte, error) {
+	if len(r) == 0 {
+		return []byte(`""`), nil
+	}
 	return r, nil
 }
 
@@ -22,6 +27,9 @@ type RawJsonStr string
 
 // MarshalJSON returns m as the JSON encoding of m.
 func (r RawJsonStr) MarshalJSON() ([]byte, error) {
+	if len(r) == 0 {
+		return []byte(`""`), nil
+	}
 	return []byte(r), nil
 }
 
